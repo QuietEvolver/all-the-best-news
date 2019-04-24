@@ -1,0 +1,15 @@
+<h5 class="black-text"><strong>Order a Burger</strong></h5>
+<form action="/create" method="POST" class="button-size">
+    <select class="browser-default" name="burgers_name">
+        <option value="" disabled selected>Choose a burger</option>
+
+        {{#each burgers_name}}
+            {{#if devoured}}
+                <option value="{{this.burgers_name}}">{{this.burgers_name}}</option>
+            {{/if}}
+        {{/each}}
+
+    </select>
+    <br>
+    <button type="submit" class="waves-effect waves-light btn green lighten-3 z-depth-1">Enter</button>
+</form>

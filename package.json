@@ -1,0 +1,40 @@
+{
+  "name": "atb-news",
+  "version": "1.0.0",
+  "description": "cheerio and mongoose for upbeat news",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuietEvolver/all-the-best-news.git"
+  },
+  "keywords": [
+    "news",
+    "good",
+    "news",
+    "happy",
+    "science",
+    "tech",
+    "upbeat",
+    "article",
+    "articles"
+  ],
+  "author": "quietevolver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuietEvolver/all-the-best-news/issues"
+  },
+  "homepage": "https://github.com/QuietEvolver/all-the-best-news#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mongoose": "^5.5.2"
+  }
+}
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/ mongolab-animate-29949";
+
+// mongoose.connect(MONGODB_URI);
