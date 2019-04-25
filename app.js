@@ -1,7 +1,12 @@
 /* input Comment/Notes Card
  * front-end
  * ==================== */
+var express = require('express');
+var router = express.Router();
+var db = require('../models');
 
+
+module.exports = router;
 // Loads results onto the page
 function getResults() {
   // Empty any results currently on the page
@@ -205,3 +210,20 @@ $.getJSON("/articles", function(data) {
     $("#bodyinput").val("");
   });
   
+  router.get("/", (req, res) => {
+    const articleId = req.query.article;
+    //get all the notes with article = articleId from mongo and return them in the response
+    db.Note.find({ article: articleId }).then(notes => res.json(notes));
+});
+//delete any notes wanting to be removed
+router.delete("/:id", (req, res) => {
+    db.Note.findByIdAndRemove(req.params.id, (err, note) => {
+        // As always, handle any potential errors:
+        if (err) return res.status(404).send(err);  //404? pg not found? i think it's' 500
+        const response = {
+            message: "Note successfully deleted",
+            id: note._id
+        };
+        return res.status(200).send(response);  //page ok
+    });
+});

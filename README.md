@@ -27,6 +27,9 @@ Follow along with the homework lessons to build the To Do list app.
      $  "       "  express-handlebars
      $  "       "  mongoose
      $  "       "  morgan
+4. Click npm start. 
+5. Navigate to localhost:3000 or      
+6. Navigate to https://atb-news.herokuapp.com/ and enjoy!
 
 ## Known Bugs
 * No known bugs at this time.

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models');
+var db = require('.');
 
 var cheerio = require('cheerio')
 
@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
 // A GET route for scraping the  website
 router.get("/scrape", function (req, res) {
   // First, we grab the body of the html with request
-  request.get("https://techcrunch.com/", function (error, response, body) {
+  request.get("https://kids.nationalgeographic.com/", function (error, response, body) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(body);
 
@@ -57,29 +57,6 @@ router.get("/scrape", function (req, res) {
   });
 
 });
-
-router.patch("/articles/:id", function (req, res) {
-  // update in mongo
-  db.Article.findByIdAndUpdate(
-    // the id of the item to find
-    req.params.id,
-
-    // the change to be made. Mongoose will smartly combine your existing 
-    // document with this change, which allows for partial updates too
-    req.body,
-
-    // an option that asks mongoose to return the updated version 
-    // of the document instead of the pre-updated one.
-    { new: true },
-
-    // the callback function
-    (err, article) => {
-      // Handle any possible database errors
-      if (err) return res.status(500).send(err);
-      return res.send(article);
-    }
-  )
-})
 
 // Route for getting all Articles from the db
 router.get("/articles", function (req, res) {
