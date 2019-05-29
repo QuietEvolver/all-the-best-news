@@ -21,6 +21,16 @@ h1 {
     font-size: 25px;  
 }
 
+.hide {
+    display: none;
+}
+
+.modal {
+    display: block;
+    width: 600px;
+    background-color: orange;
+}
+
 img:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
