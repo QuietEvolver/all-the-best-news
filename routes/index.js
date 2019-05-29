@@ -272,15 +272,17 @@ router.get("/", (req, res) => {
 });
 
 //delete any notes wanting to be removed
-router.delete("/:id", (req, res) => {
-  db.Note.findByIdAndRemove(req.params.id, (err, note) => {
+router.get("/deleteArticles/:id", (req, res) => {
+  console.log(req.params, req.query, "params/q")
+  db.Article.findByIdAndRemove(req.params.id, (err, article) => {
     // As always, handle any potential errors:
     if (err) return res.status(404).send(err);  //404? pg not found? i think it's' 500
     const response = {
-      message: "Note successfully deleted",
-      id: note._id
+      message: "Article successfully deleted",
+      id: article._id
     };
-    return res.status(200).send(response);  //page ok
+   // return res.status(200).send(response);  //page ok
+   res.redirect("back");
   });
 });
 

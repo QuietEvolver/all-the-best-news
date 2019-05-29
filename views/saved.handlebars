@@ -14,9 +14,7 @@
         <p>Headline: {{this.headline}}</p>
         <p>Summary: {{this.summary}}</p>
         <form action="/deleteArticles/{{this._id}}" method="GET">
-            <input type="hidden" name="summary" value="{{this.summary}}">
-            <input type="hidden" name="headline" value="{{this.headline}}">
-            <button type="submit" class="waves-effect waves-light btn blue lighten-3 z-depth-4">Delete Article</button>
+        <button type="submit" class="waves-effect waves-light btn blue lighten-3 z-depth-4">Delete Article</button>
         </form>
     </li>
     {{/each}}
