@@ -1,5 +1,5 @@
 body {
-    background-color: #8585ad;  
+    background-color: #c9c9e7;  
     font-family: 'Tangerine', serif;
     font-size: 48px;
     text-shadow: 4px 4px 4px #aaa;
@@ -19,6 +19,7 @@ h1 {
     margin: 10px;
     font-family: 'Tangerine', bold;  
     font-size: 25px;  
+    border: 1px solid black;
 }
 
 .hide {
