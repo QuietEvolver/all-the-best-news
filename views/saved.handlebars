@@ -1,0 +1,33 @@
+<div class="jumbotron text-center">
+    <div class="overlay">
+    </div>
+    <div class="background-image">
+    </div>
+    <div class="caption">
+        <h1>Saved Articles</h1>
+        <p>Your Saved Articles</p>
+    </div>
+
+    <ul>
+    {{#each articles}}
+    <li>
+        <p>Headline: {{this.headline}}</p>
+        <p>Summary: {{this.summary}}</p>
+        <form action="/deleteArticles/{{this._id}}" method="GET">
+            <input type="hidden" name="summary" value="{{this.summary}}">
+            <input type="hidden" name="headline" value="{{this.headline}}">
+            <button type="submit" class="waves-effect waves-light btn blue lighten-3 z-depth-4">Delete Article</button>
+        </form>
+    </li>
+    {{/each}}
+</ul>
+
+</div>
+<div class="container-fluid article-container">
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>New York Times Mongo Scraper</p>
+    </div>
+</footer>

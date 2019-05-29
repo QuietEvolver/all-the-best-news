@@ -1,0 +1,50 @@
+<a href="/articles"><button>Get Articles</button></a>
+
+<h1>Article Saver</h1>
+
+<h3>Save articles</h3>
+
+<ul>
+    {{#each articles}}
+    <li>
+        <p>Headline: {{this.headline}}</p>
+        <p>Summary: {{this.summary}}</p>
+        <form action="/saveArticles" method="POST" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="summary" value="{{this.summary}}">
+            <input type="hidden" name="headline" value="{{this.headline}}">
+            <button type="submit" class="waves-effect waves-light btn blue lighten-3 z-depth-4">Save Article</button>
+        </form>
+    </li>
+    {{/each}}
+</ul>
+
+<div>
+    <form action="/" method="POST">
+        <textarea type="text" name="article"></textarea>
+
+        <button type="submit">Submit Comment</button>
+    </form>
+</div>
+
+<div class="row">
+    {{! articles to comment on}}
+    <div class="col s6 center-align">
+        <ul>
+            {{#each articles}}
+            {{#unless this.submittedComment}}
+            <div class="card blue">
+                <p>
+                    {{this.id}}. {{this.article_name}}
+
+                    <form action="update/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="submittedComment" value="1">
+                        <button type="submit" class="waves-effect waves-light btn blue lighten-3 z-depth-4">Submit
+                            Comment</button>
+                    </form>
+
+                </p>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>

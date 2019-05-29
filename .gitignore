@@ -4,7 +4,8 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+Procfile
+node_modules/
 # Runtime data
 pids
 *.pid
@@ -59,3 +60,27 @@ typings/
 
 # next.js build output
 .next
+
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+api-keys.txt
+git-push-heroku-master-042719.txt
+Project 3 - proposal.docx
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
