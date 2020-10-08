@@ -133,4 +133,4 @@ _Please contact with questions and/or comments._
 
 *This software is licensed under the MIT license*
 
-Copyright (c) 2019 
+Copyright (c) VW
