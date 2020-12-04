@@ -1,7 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-// Using the Schema constructor, create a new UserSchema object
 var UserSchema = new Schema({
   // `name` must be unique and of type String
   name: {
@@ -45,7 +44,6 @@ var UserSchema = new Schema({
   }
 });
 
-// This creates our model from the above schema, using mongoose's model method
+// Refer to Mongoose's documentation for their model method: https://mongoosejs.com/
 var User = mongoose.model("User", UserSchema);
-// Export the User model
 module.exports = User;
